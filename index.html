@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Fare</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            background-color: #555;
+        }
+
+        .navbar input[type="text"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .navbar button {
+            padding: 8px 12px;
+            margin-left: 5px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        .content {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            flex-grow: 1;
+        }
+
+        h1, h2 {
+            color: #444;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #fareCalculator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        #fareCalculator select, #fareCalculator button {
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        #fareCalculator button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        #fareResult {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    
+    </style>
+    
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="TRANSITSCHED.html">Transit Schedule</a>
+        <a href="CONTACTUS.html">Contact Us</a>
+        <input type="text" placeholder="Search">
+        <button onclick="alert('Search functionality coming soon!')">Search</button>
+    </div>
+
+    <div class="content">
+        <h1>Train Fare Guide</h1>
+        <p>The Manila Metro Rail Transit System (MRTS), commonly known as the MRT, is a rapid transit system that primarily serves Metro Manila, Philippines. <br><br> The MRT's 16.9-kilometer-route consists of 1 line and 13 stations (in operation). The first and the only line currently in operation, MRT Line 3 is jointly operated by the Metro Rail Transit Corporation, a privately owned company, and the Department of Transportation (DOTr) through a Build-Lease-Transfer agreement. Line 3 was opened in December 1999 and completed in July 2000.</p>
+
+        <h2>Transit Map</h2>
+        <img src="ICTPROJECTQ3.png" alt="Manila Train Map">
+
+        <h2>Types of Tickets</h2>
+        <div>
+            <table class="table table-borderless ">
+    <thead>
+      <tr>
+        <th class="text-center align-middle">REGULAR</th>
+        <th class="text-center align-middle">PWD</th>
+        <th class="text-center align-middle">STUDENT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-center align-middle"> 
+            <p>Regular Ticket</p>
+            <img src="ICTPROJECTQ3REG.png">
+            <p>No Discount <br> For passengers who are not in education. <br></p>
+        </td>
+        <td class="text-center align-middle">
+            <p>PWD Ticket</p>
+            <img src="ICTPROJECTQ3PWD.png">
+            <p>50% discount<br> For passengers with mental and/or physical disabilities.</p>
+        </td>
+        <td class="text-center align-middle">
+            <p>Student Ticket</p>
+            <img src="ICTPROJECTQ3STUDENT.png">
+            <p>40% discount <br> For passengers who are still pursuing education and academics.</p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+        <center><p>Regular, Discounted (PWD), and Student Tickets.</p></center>
+
+        <h2>Ticket Price</h2>
+        <form id="fareCalculator">
+            Start Station:
+            <select id="startStation">
+                <option value="North Avenue">North Avenue</option>
+                <option value="Quezon Avenue">Quezon Avenue</option>
+                <option value="GMA-Kamuning">GMA-Kamuning</option>
+                <option value="Araneta-Cubao">Araneta-Cubao</option>
+                <option value="Santolan-Annapolis">Santolan-Annapolis</option>
+                <option value="Ortigas">Ortigas</option>
+                <option value="Shaw Boulevard">Shaw Boulevard</option>
+                <option value="Boni">Boni</option>
+                <option value="Guadalupe">Guadalupe</option>
+                <option value="Buendia">Buendia</option>
+                <option value="Ayala">Ayala</option>
+                <option value="Magallanes">Magallanes</option>
+                <option value="Taft Avenue">Taft Avenue</option>
+            </select><br><br>
+            End Station:
+            <select id="endStation">
+                <option value="North Avenue">North Avenue</option>
+                <option value="Quezon Avenue">Quezon Avenue</option>
+                <option value="GMA-Kamuning">GMA-Kamuning</option>
+                <option value="Araneta-Cubao">Araneta-Cubao</option>
+                <option value="Santolan-Annapolis">Santolan-Annapolis</option>
+                <option value="Ortigas">Ortigas</option>
+                <option value="Shaw Boulevard">Shaw Boulevard</option>
+                <option value="Boni">Boni</option>
+                <option value="Guadalupe">Guadalupe</option>
+                <option value="Buendia">Buendia</option>
+                <option value="Ayala">Ayala</option>
+                <option value="Magallanes">Magallanes</option>
+                <option value="Taft Avenue">Taft Avenue</option>
+            </select><br><br>
+            Ticket Type:
+            <select id="ticketType">
+                <option value="regular">Regular</option>
+                <option value="pwd">PWD</option>
+                <option value="student">Student</option>
+            </select><br><br>
+            <button type="button" onclick="calculateFare()">Calculate Fare</button>
+        </form>
+        
+        <p id="fareResult"></p>
+
+    </div>
+
+    <script>
+        function calculateFare() {
+            var start = document.getElementById("startStation").value;
+            var end = document.getElementById("endStation").value;
+            var ticketType = document.getElementById("ticketType").value;
+            var regularRate = 13;
+            var pwdRate = regularRate * 0.5; 
+            var studentRate = regularRate * 0.4; 
+
+            if (start === end) {
+                document.getElementById("fareResult").innerHTML = "Start and End stations cannot be the same.";
+            } else {
+                if (ticketType === "regular") {
+                    document.getElementById("fareResult").innerHTML = "Fare: " + regularRate;
+                } else if (ticketType === "pwd") {
+                    document.getElementById("fareResult").innerHTML = "Fare: " + pwdRate;
+                } else if (ticketType === "student") {
+                    document.getElementById("fareResult").innerHTML = "Fare: " + studentRate;
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
