@@ -151,6 +151,18 @@
         </div>
         <center><p>Regular, Discounted (PWD), and Student Tickets.</p></center>
 
+        <div style="   width: 1200px; overflow: hidden;">
+            <div style="width:  300px; float:  left ;">
+        <h2>Passenger Info</h2> 
+        <form>
+            <center>
+            <label>Name</label><br>
+            <input type="name" name="name"> <br>
+            <label>Age</label><br>
+            <input type="age" name="age">
+            </center>
+
+        </form>
         <h2>Ticket Price</h2>
         <form id="fareCalculator">
             Start Station:
@@ -191,10 +203,17 @@
                 <option value="pwd">PWD</option>
                 <option value="student">Student</option>
             </select><br><br>
+
             <button type="button" onclick="calculateFare()">Calculate Fare</button>
         </form>
         
         <p id="fareResult"></p>
+            </div>
+            <div style="width:  600px; float:  right ; margin-right: 200px;">
+                <h1>Preview:</h1> <br><br>  
+                <img src="ICTPROJECTQ3TICKET.png" width="15000000%">
+            </div>
+         </div>
 
     </div>
 
